@@ -34,28 +34,14 @@ app.get('/user', async (req, res) => {
 app.post('/search', async (req, res) => {
   const searchIp = await req.body.values.ipAddress
 
-  try {
-      const search_fetch_response = await
-      axios.get(`${url}apiKey=${apiKey}&domain=${searchIp}`);
-      const searchIpData = await search_fetch_response.data;
-      res.json(searchIpData)
-      console.log(searchIpData)
-  } catch (error) {
-    console.log(error)
-  }
-  try {
-      const search_fetch_response = await
-      axios.get(`${url}apiKey=${apiKey}&ipAddress=${searchIp}`);
-      const searchIpData = await search_fetch_response.data;
-      res.json(searchIpData)
-      console.log(searchIpData)
-  } catch (error) {
-    console.log(error)
-  }
 
+  const search_fetch_response = await
+    axios.get(`${url}apiKey=${apiKey}&ipAddress=${searchIp}`);
   
   
-  
+  const searchIpData = await search_fetch_response.data;
+  res.json(searchIpData)
+  console.log(searchIpData)
 })
 
 
