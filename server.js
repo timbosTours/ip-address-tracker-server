@@ -13,7 +13,7 @@ app.use(express.urlencoded({ extended: true }))
 
 
 app.use((req, res, next) => {
-  res.setHeader("Access-Control-Allow-Origin", "https://glittery-halva-a7c1b2.netlify.app/");
+  res.setHeader("Access-Control-Allow-Origin", "https://glittery-halva-a7c1b2.netlify.app");
   res.header(
     "Access-Control-Allow-Methods",
     "GET,POST"
